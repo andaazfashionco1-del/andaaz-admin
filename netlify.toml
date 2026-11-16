@@ -1,0 +1,8 @@
+# Netlify build settings (the Next.js runtime is detected automatically).
+# In the Netlify UI, leave "Base directory" EMPTY — this repo's root is the Next.js app.
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
