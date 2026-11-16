@@ -88,10 +88,10 @@ export function CategoryForm({
   return (
     <form onSubmit={onSubmit} className="flex flex-col gap-4" noValidate>
       <Field label="Name" htmlFor="cat-name" error={errors.name?.message} required>
-        <Input id="cat-name" aria-invalid={Boolean(errors.name)} {...register("name")} />
+        <Input id="cat-name" placeholder="e.g. Jackets" aria-invalid={Boolean(errors.name)} {...register("name")} />
       </Field>
       <Field label="Description" htmlFor="cat-desc" error={errors.description?.message}>
-        <Textarea id="cat-desc" rows={3} {...register("description")} />
+        <Textarea id="cat-desc" placeholder="e.g. Bombers, puffers and denim jackets for every season." rows={3} {...register("description")} />
       </Field>
       <Field label="Parent category" htmlFor="cat-parent" hint="Leave empty for a top-level category.">
         <Select id="cat-parent" {...register("parentId")}>
@@ -117,7 +117,7 @@ export function CategoryForm({
         />
       </Field>
       <Field label="Sort order" htmlFor="cat-sort" error={errors.sortOrder?.message} hint="Lower numbers show first.">
-        <Input id="cat-sort" type="number" className="max-w-32" {...register("sortOrder", { valueAsNumber: true })} />
+        <Input id="cat-sort" placeholder="0" type="number" className="max-w-32" {...register("sortOrder", { valueAsNumber: true })} />
       </Field>
       <div className="grid gap-3 sm:grid-cols-2">
         <Controller

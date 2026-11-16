@@ -144,12 +144,13 @@ export function ProductForm({ product }: { product?: Product }) {
             <CardHeader title="Details" />
             <div className="flex flex-col gap-4">
               <Field label="Name" htmlFor="p-name" error={errors.name?.message} required>
-                <Input id="p-name" aria-invalid={Boolean(errors.name)} {...register("name")} />
+                <Input id="p-name" placeholder="e.g. Oversized Puffer Jacket" aria-invalid={Boolean(errors.name)} {...register("name")} />
               </Field>
               <Field label="Description" htmlFor="p-desc" error={errors.description?.message} required>
                 <Textarea
                   id="p-desc"
                   rows={6}
+                  placeholder="Fabric, fit, care instructions and what makes it special…"
                   aria-invalid={Boolean(errors.description)}
                   {...register("description")}
                 />
@@ -205,6 +206,7 @@ export function ProductForm({ product }: { product?: Product }) {
                   type="number"
                   min={0}
                   inputMode="numeric"
+                  placeholder="e.g. 4999"
                   aria-invalid={Boolean(errors.price)}
                   {...register("price", { valueAsNumber: true })}
                 />
@@ -220,6 +222,7 @@ export function ProductForm({ product }: { product?: Product }) {
                   type="number"
                   min={0}
                   inputMode="numeric"
+                  placeholder="e.g. 6499"
                   aria-invalid={Boolean(errors.compareAtPrice)}
                   {...register("compareAtPrice", { setValueAs: toNullableNumber })}
                 />
@@ -230,6 +233,7 @@ export function ProductForm({ product }: { product?: Product }) {
                   type="number"
                   min={0}
                   inputMode="numeric"
+                  placeholder="e.g. 25"
                   aria-invalid={Boolean(errors.stock)}
                   {...register("stock", { valueAsNumber: true })}
                 />

@@ -116,7 +116,7 @@ export function DealForm({ deal, onDone }: { deal: Deal | null; onDone: () => vo
         <Input id="d-title" placeholder="e.g. Eid Sale" aria-invalid={Boolean(errors.title)} {...register("title")} />
       </Field>
       <Field label="Description" htmlFor="d-desc">
-        <Textarea id="d-desc" rows={2} {...register("description")} />
+        <Textarea id="d-desc" placeholder="e.g. Flat discounts on the whole winter collection." rows={2} {...register("description")} />
       </Field>
 
       <div className="grid gap-4 sm:grid-cols-2">
@@ -132,6 +132,7 @@ export function DealForm({ deal, onDone }: { deal: Deal | null; onDone: () => vo
             type="number"
             min={1}
             max={type === "PERCENT" ? 100 : undefined}
+            placeholder={type === "PERCENT" ? "e.g. 20" : "e.g. 500"}
             aria-invalid={Boolean(errors.value)}
             {...register("value", { valueAsNumber: true })}
           />
@@ -168,6 +169,7 @@ export function DealForm({ deal, onDone }: { deal: Deal | null; onDone: () => vo
           type="number"
           min={0}
           disabled={!isCoupon}
+          placeholder="e.g. 3000"
           {...register("minOrderAmount", { setValueAs: toNullableNumber })}
         />
       </Field>

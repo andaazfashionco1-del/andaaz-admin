@@ -75,10 +75,10 @@ export function BannerForm({ banner, onDone }: { banner: Banner | null; onDone: 
         />
       </Field>
       <Field label="Title" htmlFor="b-title" error={errors.title?.message} required>
-        <Input id="b-title" aria-invalid={Boolean(errors.title)} {...register("title")} />
+        <Input id="b-title" placeholder="e.g. Winter Drop ’26" aria-invalid={Boolean(errors.title)} {...register("title")} />
       </Field>
       <Field label="Subtitle" htmlFor="b-subtitle">
-        <Input id="b-subtitle" {...register("subtitle")} />
+        <Input id="b-subtitle" placeholder="e.g. Puffers, hoodies and boots, up to 30% off" {...register("subtitle")} />
       </Field>
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Button text" htmlFor="b-cta">
@@ -89,7 +89,7 @@ export function BannerForm({ banner, onDone }: { banner: Banner | null; onDone: 
         </Field>
       </div>
       <Field label="Sort order" htmlFor="b-sort" error={errors.sortOrder?.message} hint="Lower numbers show first.">
-        <Input id="b-sort" type="number" className="max-w-32" {...register("sortOrder", { valueAsNumber: true })} />
+        <Input id="b-sort" placeholder="0" type="number" className="max-w-32" {...register("sortOrder", { valueAsNumber: true })} />
       </Field>
       <Controller
         control={control}
